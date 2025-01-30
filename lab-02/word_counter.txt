@@ -1,0 +1,1 @@
+This word will appear few times in this text, because this word should be counted in task 3, named "word Counter"
