@@ -1,0 +1,29 @@
+# To change file owner and group, we should execute following commands:
+
+# To change file owner:
+ls -la file.txt
+# -rw-r--r--  1 user1 usergroup  1024 Jan 28 12:00 file.txt
+
+sudo chown newuser file.txt
+
+# To change group
+sudo chgrp newgroup file.txt
+
+# To change file owner and group at the same time:
+sudo chown newuser:newgroup file.txt
+
+
+
+How it affects to file usage:
+
+If the file owner is changed using chown:
+
+The new owner gains full control over the file permissions.
+The previous owner loses control unless they still have access through a group or global permissions.
+If the group is changed using chgrp:
+
+Members of the new group can access the file according to the assigned permissions.
+Members of the old group may lose access if they are no longer part of the new group.
+If the owner does not have permissions:
+
+Even the file owner cannot modify or execute the file if they do not have rw- or x permissions.

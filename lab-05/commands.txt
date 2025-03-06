@@ -1,0 +1,29 @@
+cat /etc/passwd > passwd_before.txt
+
+sudo adduser user1
+
+cat /etc/passwd > passwd_after.txt
+
+cat /etc/group > groups.txt
+
+sudo groupadd developers
+
+sudo usermod -aG developers user1
+
+groups user1
+
+cat /etc/group > groups_after.txt
+
+su - user1
+
+whoami > whoami.txt
+
+chfn user1
+
+cat /etc/passwd > passwd_updated.txt
+
+pkill -KILL -u user1
+
+sudo deluser --remove-home --force user1
+
+cat /etc/passwd > deleted_passwd.txt
